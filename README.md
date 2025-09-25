@@ -36,8 +36,6 @@ We will begin by exploring three high-priority themes:
 - Work in groups of 2–3 people per category.  
 - Collect relevant datasets and provide references.  
 - Write a brief report on established research and applications for your assigned category.  
-- Add contributions directly to this repository in the appropriate folder.  
-- New datasets can also be added to the shared [Hugging Face collection](https://huggingface.co/spaces/hugging-science/Awesome_food_allergy_datasets).  
 
 ---
 
