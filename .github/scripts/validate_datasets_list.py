@@ -70,6 +70,8 @@ def extract_between(text: str, start: str, end: str) -> str:
     """
     given the reame text and tokens it extracts a dataset category
     """
+    if start not in text or end not in text:
+        die("Missing tokens {start} - {end}")
     m = re.search(re.escape(start) + r"(.*?)" + re.escape(end), text, flags=re.S)
     return m.group(1).strip() if m else ""
 
@@ -116,7 +118,6 @@ def main():
     base = get_file(repo, path, base_ref, token)
     head = get_file(repo, path, head_ref, token)
     cats = find_categories(head)
-    print(cats)
     if not cats: die("No categories found (## headings missing).")
 
     all_valid = True
@@ -141,7 +142,7 @@ def main():
 
     if not all_valid:
         body = "### Dataset Category Validation Summary\n" + "\n".join(summary)
-        body += f"\nto pass all checks make sure all added and modified dataset entries follow this format: \n{data_item_format}"
+        body += f"\n\n\nto pass all checks make sure all added and modified dataset entries follow this format: \n{data_item_format}"
         post_comment(repo, pr, token, body)
         die("invalid data entries, details in the posted comment")
 
