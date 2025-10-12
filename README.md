@@ -2,7 +2,7 @@
 
 # 🥜 Awesome Food Allergy Datasets
 
-![Datasets](https://img.shields.io/badge/datasets-72-blue)
+![Datasets](https://img.shields.io/badge/datasets-73-blue)
 ![Open Source](https://img.shields.io/badge/open%20source-87%25-brightgreen)
 ![License](https://img.shields.io/badge/license-CC0-green)
 ![Maintained](https://img.shields.io/badge/maintained-yes-brightgreen)
@@ -22,13 +22,13 @@ Our goal: Enable researchers, ML practitioners, and the scientific community to 
 
 | Metric | Count |
 |--------|-------|
-| **Total Datasets** | 72 |
-| **Open Source** | 63 (87%) |
+| **Total Datasets** | 73 |
+| **Open Source** | 64 (87%) |
 | **Gated** | 9 |
 | **Categories** | 6 |
 
 ### By Category
-- 💊 **Drug & Immunotherapy Development**: 34 datasets
+- 💊 **Drug & Immunotherapy Development**: 35 datasets
 - 🏥 **Patient Management & Clinical Decision Support**: 9 datasets
 - 🍽️ **Food Product Development & Safety**: 9 datasets
 - 🔬 **Computational Method Development**: 7 datasets
@@ -397,6 +397,16 @@ Comprehensive database containing over 1.6 million immune epitopes including ant
 ---
 
 <!-- TSV_END -->
+
+## New DB
+
+A comprehensive database of allergenic proteins with structural annotations.
+
+**Task:** Allergen Identification, Structural Analysis | **Data Type:** Molecular | **Availability:** 🟢 Open source | **Paper:** [Link](https://example.com/paper)
+
+**Source:** https://allergendb.org
+
+---
 <!-- CATEGORY_Drug & Immunotherapy Development_END -->
 
 
