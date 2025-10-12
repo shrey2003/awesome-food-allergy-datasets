@@ -3,8 +3,7 @@ name: README Datasets list validation
 on:
   pull_request:
     paths:
-      - "drug_design/datasets_drug_design.md"
-
+      - "README.md"
 
 permissions:
   contents: read
