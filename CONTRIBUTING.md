@@ -15,6 +15,8 @@ This repository is a community-driven effort to promote and support the use of m
 
 ---
 
+<a id="focus-areas"></a>
+
 ## 🎯 Focus Areas
 
 We currently focus on six main categories:
@@ -27,6 +29,8 @@ We currently focus on six main categories:
 - 🍽️ **Food Product Development & Safety**
 
 ---
+
+<a id="how-to-contribute"></a>
 
 ## 🚀 How to Contribute
 
@@ -88,6 +92,8 @@ git push origin add-my-dataset
 
 ---
 
+<a id="dataset-entry-requirements"></a>
+
 ## 📋 Dataset Entry Requirements
 
 All datasets must include the following:
@@ -121,6 +127,8 @@ A comprehensive database of allergenic proteins with structural annotations.
 
 ---
 
+<a id="key-points"></a>
+
 ## 🔑 Key Points
 
 - ⚠️ **Never delete or modify HTML comment markers** (<!-- --> tags)
@@ -129,6 +137,8 @@ A comprehensive database of allergenic proteins with structural annotations.
 - ✅ Stats are automatically recalculated from all datasets
 
 ---
+
+<a id="automated-workflows"></a>
 
 ## 🤖 Automated Workflows
 
@@ -152,6 +162,8 @@ When you submit a PR, workflows run automatically:
 **Note:** Both workflows run independently. You'll see stats updates AND validation comments.
 
 ---
+
+<a id="submission-process"></a>
 
 ## 📝 Submission Process
 
