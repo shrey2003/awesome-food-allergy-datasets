@@ -397,6 +397,16 @@ Comprehensive database containing over 1.6 million immune epitopes including ant
 ---
 
 <!-- TSV_END -->
+
+## New DB
+
+A comprehensive database of allergenic proteins with structural annotations.
+
+**Task:** Allergen Identification, Structural Analysis | **Data Type:** Molecular | **Availability:** 🟢 Open source | **Paper:** [Link](https://example.com/paper)
+
+**Source:** https://allergendb.org
+
+---
 <!-- CATEGORY_Drug & Immunotherapy Development_END -->
 
 
