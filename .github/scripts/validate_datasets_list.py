@@ -8,8 +8,8 @@ import os, re, sys, base64, requests, difflib
 from typing import List, Tuple
 
 GITHUB_API = "https://api.github.com"
-required_fields = ["**Task:**", "**Data Type:**", "**Availability:**", "**Source:**"]
-optional_fields = ["**Paper:**", "**Contact:**"]
+required_fields = ["**Task:**", "**Data Type:**", "**Availability:**"]
+optional_fields = ["**Paper:**", "**Contact:**", "**Source:**"]
 availability_status_options = ["🟢 Open source", "🟡 Gated"]
 
 data_item_format = f"""
@@ -19,14 +19,15 @@ dataset description...
 
 **Task:** ... | **Data Type:** ... | **Availability:** {' or '.join(f'[{opt}]' for opt in availability_status_options)} | **Paper:** [Link](paper_link)
 
-**Source:** source_link
+**Source:** source_link (required for open source, optional for gated)
 
 ---
 
 
 
-required fields: {required_fields}
-optional fileds: {optional_fields}
+required fields (all datasets): {required_fields}
+required fields (open source only): ["**Source:**"]
+optional fields: {optional_fields}
 """
 
 def die(msg): print(msg, file=sys.stderr); sys.exit(1)
@@ -77,11 +78,11 @@ def extract_between(text: str, start: str, end: str) -> str:
 
 def validate_section(section: str) -> Tuple[bool, List[str]]:
     """
-    given a dataset category list it checks for if each listed dataset include the expected infos: 
+    given a dataset category list it checks for if each listed dataset include the expected infos:
     - task
     - data type
     - availability
-    - source
+    - source (required for open source, optional for gated)
     """
 
     failures = []
@@ -89,8 +90,22 @@ def validate_section(section: str) -> Tuple[bool, List[str]]:
     for title_line, content in datasets:
         title = title_line[3:].strip()
         found_fields = re.findall(r"\*\*[^:]+:\*\*", content)
-        missing = [f for f in required_fields if f not in found_fields]
+
+        is_gated = False
+        availability_match = re.search(r'\*\*Availability:\*\*\s*([^|]+)', content)
+        if availability_match:
+            availability_value = availability_match.group(1).strip().lower()
+
+            if 'gated' in availability_value or '🟡' in availability_value:
+                is_gated = True
+
+        fields_to_check = required_fields.copy()
+        if not is_gated:
+            fields_to_check.append("**Source:**")
+
+        missing = [f for f in fields_to_check if f not in found_fields]
         extra = [f for f in found_fields if f not in required_fields + optional_fields]
+
         if missing or extra:
             failures.append({
                 "dataset": title,
